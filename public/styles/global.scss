@@ -1,0 +1,163 @@
+$color-primary: white;
+$color-secondary: #2196f3;
+$color-tertiary: #90caf9;
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-primary;
+}
+
+.loading-msg {
+  font-size: 24px;
+}
+
+.title {
+  padding: 30px;
+  text-align: center;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+
+  input {
+    background-color: #ddeffd;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    font-size: 16px;
+  }
+
+  .dropdown {
+    background-color: $color-tertiary;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+
+    &:after {
+      content: '▼';
+      font-size: 10px;
+    }
+  }
+
+  // .cont-details {
+  // }
+
+  .cont-filter-inner {
+    position: absolute;
+    background-color: $color-tertiary;
+    top: 120px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+
+    label {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .filter {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.cont-main {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+
+  .cont-details {
+    flex: 0 0 640px;
+    position: sticky;
+    top: 145px;
+    height: fit-content;
+    padding-right: 60px;
+
+    .cont-details-inner {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      background-color: $color-secondary;
+      padding: 30px;
+
+      .btn-close {
+        border: none;
+        align-self: flex-end;
+        background-color: transparent;
+        cursor: pointer;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      #details {
+        height: 500px;
+        padding: 10px;
+      }
+    }
+  }
+
+  #elixirs-grid {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    .elixir-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 20px;
+      background-color: $color-secondary;
+      width: 320px;
+      height: 75px;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
